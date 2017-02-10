@@ -11,8 +11,7 @@ save_extension(screen, 'img.png')
 
 '''
 
-#Don't call display_name and save_extension while
-#the image is open
+#Don't call display_name and save_extension while the image is open
 
 x0 = 203
 y0 = 80
