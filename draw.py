@@ -14,7 +14,7 @@ def draw_line( screen, x0, y0, x1, y1, color ):
     d = 2*A + B
 
     while x <= x1:
-        plot(screen,color,x,len(screen)-y)
+        plot(screen,color,x,y)
         x+=1
         if d > 0:
             y+=1
@@ -51,4 +51,4 @@ def draw_line_own( screen, x0, y0, x1, y1, color ):
     for y in range(y0,y1+1):
         for x in range(x0,x1+1):
             if onEquat(es,x,y):
-                plot(screen,color,x,len(screen)-y)
+                plot(screen,color,x,y)

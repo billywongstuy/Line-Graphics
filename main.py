@@ -28,10 +28,10 @@ for y1 in range(0,500,10):
     
     draw_line(screen,x0,y0,x1,y1,color)
 
-save_extension(screen, 'imgbres.png')
-display_name(screen,'imgbres.ppm')
+save_extension(screen, 'img.png')
+display(screen)
 
-
+'''
 clear_screen(screen)
 
 for y1 in range(0,500,10):
@@ -47,3 +47,4 @@ for y1 in range(0,500,10):
 save_extension(screen, 'imgme.png')
 display_name(screen,'imgme.ppm')
 
+'''
