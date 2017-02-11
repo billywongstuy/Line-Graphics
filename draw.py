@@ -34,9 +34,8 @@ def draw_line_own( screen, x0, y0, x1, y1, color ):
 def draw_line_bres( screen, x0, y0, x1, y1, color ):
     x = x0
     y = y0
-    es = equation4Pic(x0,y0,x1,y1)
-    A = es[0]
-    B = -1
+    A = y1-y0
+    B = x0-x1
     d = 2*A + B
     pts = []
     while x <= x1:
