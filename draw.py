@@ -13,7 +13,7 @@ def lineO1( screen, x0, y0, x1, y1, color ):
 
     d = 2*A + B
 
-    while x <= x1:
+    while x < x1:
         plot(screen,color,x,y)
         x+=1
         if d > 0:
@@ -72,10 +72,10 @@ def lineO8(screen,x0,y0,x1,y1,color):
     while x < x1:
         plot(screen,color,x,y)
         x += 1
-        d -= 2*A
+        d += 2*A
         if d < 0:
             y-=1
-            d += 2*B
+            d -= 2*B
 
 
 def draw_line( screen, x0, y0, x1, y1, color ):
@@ -87,9 +87,18 @@ def draw_line( screen, x0, y0, x1, y1, color ):
         x1 = tempX
         y1 = tempY
 
-    slope = (y1-y0)/(x1-x0)
 
-    if slope > 0 and slope < 1:
+    if x0 == x1:
+        slope = "Infinite"     
+    else:
+        slope = (y1-y0)/(x1-x0)
+
+        
+    if slope == "Infinite":
+        while y0 <= y1:
+            plot(screen,color,x0,y0)
+            y0+=1
+    elif slope > 0 and slope < 1:
         lineO1(screen,x0,y0,x1,y1,color)
     elif slope > 1:
         lineO2(screen,x0,y0,x1,y1,color)
