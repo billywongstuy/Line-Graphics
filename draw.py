@@ -89,15 +89,21 @@ def draw_line( screen, x0, y0, x1, y1, color ):
 
 
     if x0 == x1:
-        slope = "Infinite"     
+        slope = "Infinite"
+    elif y0 == y1:
+        slope = 0
     else:
         slope = (y1-y0)/(x1-x0)
 
         
     if slope == "Infinite":
-        while y0 <= y1:
+        while y0 < y1:
             plot(screen,color,x0,y0)
             y0+=1
+    elif slope == 0:
+        while x0 < x1:
+            plot(screen,color,x0,y0)
+            x0+=1
     elif slope > 0 and slope < 1:
         lineO1(screen,x0,y0,x1,y1,color)
     elif slope > 1:
